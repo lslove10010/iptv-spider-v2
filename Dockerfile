@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 # 复制前端代码 (在这个简单的例子中，我们将前端作为静态文件由后端稍后集成，或者直接本地打开)
 # 在实际生产中，你会用 Nginx 容器来 serve index.html
-
+COPY index.html .
 # 暴露端口
 EXPOSE 8000
 
