@@ -95,7 +95,7 @@
                 // 轮询日志
                 const pollLogs = async () => {
                     try {
-                        const res = await axios.get('http://localhost:8000/api/logs');
+                        const res = await axios.get('http://127.0.0.1:8000/api/logs');
                         logs.value = res.data.logs;
                         running.value = res.data.running;
                         
@@ -112,7 +112,7 @@
 
                 const startTask = async () => {
                     try {
-                        await axios.post('http://localhost:8000/api/start', {
+                        await axios.post('http://127.0.0.1:8000/api/start', {
                             api_type: form.value.apiType,
                             page_count: form.value.pageCount,
                             start_date: form.value.startDate
@@ -125,7 +125,7 @@
                 };
 
                 const stopTask = async () => {
-                    await axios.post('http://localhost:8000/api/stop');
+                    await axios.post('http://127.0.0.1:8000/api/stop');
                     // 不立即清除定时器，等待最后一次状态更新
                 };
 
